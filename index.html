@@ -1,1 +1,1063 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGENDA KEGIATAN OKTOBER 2026 - Dashboard Sekolah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        brandBlue: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .gradient-header {
+            background: linear-gradient(135deg, #047857 0%, #059669 50%, #1d4ed8 100%);
+        }
+        .gradient-card-bg {
+            background: linear-gradient(135deg, rgba(236,253,245,0.8) 0%, rgba(239,246,255,0.8) 100%);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+        }
+        .custom-shadow {
+            box-shadow: 0 10px 30px -5px rgba(5, 150, 105, 0.08), 0 4px 12px -2px rgba(37, 99, 235, 0.05);
+        }
+        .modal-animate {
+            animation: modalFadeIn 0.25s ease-out forwards;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.96) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased">
 
+    <div>
+        <header class="gradient-header text-white relative overflow-hidden shadow-lg">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 relative z-10">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="text-center md:text-left">
+                        <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase mb-3 border border-white/20">
+                            <i class="fa-solid fa-graduation-cap text-emerald-300"></i> Portal Resmi Informasi Sekolah
+                        </div>
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-sm">
+                            AGENDA KEGIATAN OKTOBER 2026
+                        </h1>
+                        <p class="mt-2 text-emerald-100 text-base sm:text-lg max-w-2xl font-medium">
+                            Informasi Kegiatan Sekolah Terpadu & Jadwal Pembelajaran
+                        </p>
+                    </div>
+                    <!-- Flat modern education calendar graphic -->
+                    <div class="flex-shrink-0 bg-white/10 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-white/20 text-center shadow-inner hidden sm:flex items-center gap-4">
+                        <div class="w-14 h-14 rounded-xl bg-white text-emerald-700 flex flex-col items-center justify-center font-bold shadow-md">
+                            <span class="text-xs uppercase tracking-wider text-slate-500 font-bold">OKT</span>
+                            <span class="text-2xl leading-none font-extrabold">2026</span>
+                        </div>
+                        <div class="text-left pr-2">
+                            <div class="text-xs text-emerald-200 uppercase tracking-wide font-bold">Tahun Ajaran</div>
+                            <div class="text-sm font-bold text-white">2026 / 2027</div>
+                            <div class="text-xs text-emerald-100 flex items-center gap-1 mt-0.5">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse"></span> Semester Gasal
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center gap-1 sm:gap-2 overflow-x-auto py-2 no-scrollbar w-full md:w-auto">
+                        <button onclick="switchTab('beranda')" id="nav-beranda" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 whitespace-nowrap bg-emerald-600 text-white shadow-sm">
+                            <i class="fa-solid fa-house text-xs"></i> Beranda
+                        </button>
+                        <button onclick="switchTab('agenda')" id="nav-agenda" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 whitespace-nowrap text-slate-600 hover:bg-slate-100 hover:text-slate-900">
+                            <i class="fa-solid fa-list-check text-xs"></i> Agenda Oktober
+                        </button>
+                        <button onclick="switchTab('kalender')" id="nav-kalender" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 whitespace-nowrap text-slate-600 hover:bg-slate-100 hover:text-slate-900">
+                            <i class="fa-regular fa-calendar-days text-xs"></i> Tampilan Kalender
+                        </button>
+                        <button onclick="switchTab('filterKelas')" id="nav-filterKelas" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 whitespace-nowrap text-slate-600 hover:bg-slate-100 hover:text-slate-900">
+                            <i class="fa-solid fa-filter text-xs"></i> Filter Kelas
+                        </button>
+                        <button onclick="switchTab('infoPenting')" id="nav-infoPenting" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 whitespace-nowrap text-slate-600 hover:bg-slate-100 hover:text-slate-900">
+                            <i class="fa-solid fa-circle-info text-xs"></i> Info Penting
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="today-banner" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 hidden">
+            <div class="bg-gradient-to-r from-amber-500 to-orange-500 text-white p-4 rounded-2xl shadow-md flex items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-wider text-amber-100">Agenda Hari Ini</div>
+                        <div id="today-banner-text" class="font-bold text-sm sm:text-base">Ada agenda penting hari ini!</div>
+                    </div>
+                </div>
+                <button onclick="switchTab('agenda')" class="px-3.5 py-1.5 bg-white text-amber-800 rounded-lg text-xs font-bold hover:bg-amber-50 transition shadow-sm whitespace-nowrap">
+                    Lihat Detail
+                </button>
+            </div>
+        </div>
+
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            
+            <!-- ================= PAGE 1: BERANDA ================= -->
+            <section id="page-beranda" class="tab-content space-y-8">
+                <!-- Welcome Card -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 custom-shadow border border-slate-100 relative overflow-hidden">
+                    <div class="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-emerald-50 to-transparent pointer-events-none hidden md:block"></div>
+                    <div class="max-w-3xl relative z-10">
+                        <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 rounded-lg text-xs font-bold mb-3">Selamat Datang di Portal Agenda</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-slate-800">Ringkasan Kegiatan Sekolah Bulan Oktober 2026</h2>
+                        <p class="mt-2 text-slate-600 text-sm sm:text-base leading-relaxed">
+                            Simak seluruh informasi rangkaian acara, peringatan hari besar nasional, asesmen siswa, hingga penerimaan raport. Pilih menu atau kartu di bawah untuk melihat rincian kegiatan.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Statistics Grid -->
+                <div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-pie text-emerald-600"></i> Sorotan & Momen Kunci
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        
+                        <!-- Card 1: Month -->
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-200 flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl shrink-0 font-bold">
+                                📅
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Periode Kalender</p>
+                                <h4 class="text-xl font-extrabold text-slate-800 mt-0.5">Oktober 2026</h4>
+                                <p class="text-xs text-slate-500 mt-1">31 Hari • 7 Tanggal Kegiatan Utama</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Total Agendas -->
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-200 flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl shrink-0 font-bold">
+                                📌
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Momen Kegiatan</p>
+                                <h4 class="text-xl font-extrabold text-slate-800 mt-0.5">7 Agenda Utama</h4>
+                                <p class="text-xs text-slate-500 mt-1">11 Rangkaian Aktivitas Siswa</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Hari Batik -->
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-200 flex items-start gap-4 cursor-pointer hover:border-emerald-300" onclick="showEventDetailById(2)">
+                            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-xl shrink-0 font-bold">
+                                🎨
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-purple-600 uppercase tracking-wider">Hari Batik Nasional</p>
+                                <h4 class="text-xl font-extrabold text-slate-800 mt-0.5">2 Oktober</h4>
+                                <p class="text-xs text-slate-500 mt-1">Batik Mosaic & Style-Up Challenge</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: ASSIK -->
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-200 flex items-start gap-4 cursor-pointer hover:border-emerald-300" onclick="showEventDetailById(6)">
+                            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-xl shrink-0 font-bold">
+                                📝
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-amber-600 uppercase tracking-wider">Asesmen Standar (ASSIK)</p>
+                                <h4 class="text-xl font-extrabold text-slate-800 mt-0.5">12–13 Oktober</h4>
+                                <p class="text-xs text-slate-500 mt-1">Khusus Kelas 6 (MTK & B. Indo)</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: Hari Santri -->
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-200 flex items-start gap-4 cursor-pointer hover:border-emerald-300" onclick="showEventDetailById(9)">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl shrink-0 font-bold">
+                                🏫
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Hari Santri</p>
+                                <h4 class="text-xl font-extrabold text-slate-800 mt-0.5">22 Oktober</h4>
+                                <p class="text-xs text-slate-500 mt-1">Kunjungan Edukasi Ponpes</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 6: Sumpah Pemuda -->
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-200 flex items-start gap-4 cursor-pointer hover:border-emerald-300" onclick="showEventDetailById(10)">
+                            <div class="w-12 h-12 rounded-xl bg-red-100 text-red-700 flex items-center justify-center text-xl shrink-0 font-bold">
+                                🇮🇩
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-red-600 uppercase tracking-wider">Sumpah Pemuda</p>
+                                <h4 class="text-xl font-extrabold text-slate-800 mt-0.5">28 Oktober</h4>
+                                <p class="text-xs text-slate-500 mt-1">Memakai Baju Adat Nusantara</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Call to Action & Quick Links -->
+                <div class="gradient-card-bg p-6 sm:p-8 rounded-2xl border border-emerald-200/60 flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div class="space-y-1 text-center sm:text-left">
+                        <h3 class="text-xl font-bold text-slate-800">Ingin melihat jadwal selengkapnya?</h3>
+                        <p class="text-sm text-slate-600">Gunakan pencarian, filter kelas, atau tampilan kalender interaktif kami.</p>
+                    </div>
+                    <button onclick="switchTab('agenda')" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2 whitespace-nowrap">
+                        Lihat Semua Agenda <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- ================= PAGE 2: AGENDA OKTOBER ================= -->
+            <section id="page-agenda" class="tab-content hidden space-y-6">
+                <!-- Search & Filters Toolbar -->
+                <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm space-y-4">
+                    <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+                        <!-- Search Box -->
+                        <div class="relative flex-1">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                            <input type="text" id="search-input" oninput="applyFilters()" placeholder="Cari nama kegiatan atau deskripsi..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm transition">
+                        </div>
+
+                        <!-- Category Filter Dropdown -->
+                        <div class="w-full md:w-64">
+                            <select id="category-filter" onchange="applyFilters()" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white">
+                                <option value="ALL">Semua Kategori</option>
+                                <option value="Upacara">Upacara</option>
+                                <option value="Hari Nasional">Hari Nasional</option>
+                                <option value="Lomba">Lomba</option>
+                                <option value="Asesmen">Asesmen</option>
+                                <option value="Raport">Raport</option>
+                                <option value="Dokumentasi sekolah">Dokumentasi Sekolah</option>
+                                <option value="Kegiatan keagamaan">Kegiatan Keagamaan</option>
+                                <option value="Kegiatan budaya/bahasa">Kegiatan Budaya/Bahasa</option>
+                            </select>
+                        </div>
+
+                        <!-- View Toggle Button (Table / Cards) -->
+                        <div class="flex items-center gap-2 self-end md:self-auto">
+                            <button onclick="resetAllFilters()" title="Reset Filter" class="px-3.5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-rotate-right"></i> Reset
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Class Quick Filter Pills -->
+                    <div class="flex items-center gap-2 overflow-x-auto pb-1 pt-2 no-scrollbar border-t border-slate-100">
+                        <span class="text-xs font-bold text-slate-500 uppercase tracking-wider shrink-0 mr-1">Kelas:</span>
+                        <button onclick="selectClassFilter('ALL')" class="class-pill-btn px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-600 text-white transition shrink-0" data-class="ALL">Semua</button>
+                        <button onclick="selectClassFilter('1')" class="class-pill-btn px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition shrink-0" data-class="1">Kelas 1</button>
+                        <button onclick="selectClassFilter('2')" class="class-pill-btn px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition shrink-0" data-class="2">Kelas 2</button>
+                        <button onclick="selectClassFilter('3')" class="class-pill-btn px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition shrink-0" data-class="3">Kelas 3</button>
+                        <button onclick="selectClassFilter('4')" class="class-pill-btn px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition shrink-0" data-class="4">Kelas 4</button>
+                        <button onclick="selectClassFilter('5')" class="class-pill-btn px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition shrink-0" data-class="5">Kelas 5</button>
+                        <button onclick="selectClassFilter('6')" class="class-pill-btn px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition shrink-0" data-class="6">Kelas 6</button>
+                    </div>
+                </div>
+
+                <!-- Interactive Table Container -->
+                <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+                        <div class="font-bold text-slate-800 text-base">Daftar Agenda Oktober 2026</div>
+                        <span id="agenda-count-badge" class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">11 Agenda</span>
+                    </div>
+
+                    <!-- Responsive Desktop Table -->
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse min-w-[640px]">
+                            <thead>
+                                <tr class="bg-slate-50/80 text-slate-600 text-xs uppercase tracking-wider font-bold border-b border-slate-200">
+                                    <th class="py-3.5 px-6">Tanggal</th>
+                                    <th class="py-3.5 px-6">Agenda Kegiatan</th>
+                                    <th class="py-3.5 px-6">Sasaran Kelas</th>
+                                    <th class="py-3.5 px-6">Keterangan / Ketentuan</th>
+                                    <th class="py-3.5 px-6 text-center">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="agenda-table-body" class="divide-y divide-slate-100 text-sm">
+                                <!-- Dynamic Rows JS -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Empty state -->
+                    <div id="no-agenda-msg" class="p-12 text-center hidden">
+                        <i class="fa-regular fa-folder-open text-4xl text-slate-300 mb-3"></i>
+                        <p class="text-slate-600 font-bold">Tidak ada agenda yang sesuai dengan kriteria pencarian.</p>
+                        <button onclick="resetAllFilters()" class="mt-3 text-xs font-bold text-emerald-600 hover:underline">Reset Semua Filter</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PAGE 3: TAMPILAN KALENDER ================= -->
+            <section id="page-kalender" class="tab-content hidden space-y-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm">
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                                <i class="fa-regular fa-calendar-check text-emerald-600"></i> Kalender Interaktif Oktober 2026
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">Klik pada tanggal bermarka untuk melihat detail kegiatan secara lengkap.</p>
+                        </div>
+                        <div class="flex items-center gap-4 text-xs font-medium">
+                            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-emerald-500"></span> Ada Kegiatan</span>
+                            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-blue-500"></span> Asesmen/Raport</span>
+                        </div>
+                    </div>
+
+                    <!-- Calendar Grid -->
+                    <div class="grid grid-cols-7 gap-1 sm:gap-2 text-center text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
+                        <div class="py-2 text-red-500">Min</div>
+                        <div class="py-2">Sen</div>
+                        <div class="py-2">Sel</div>
+                        <div class="py-2">Rab</div>
+                        <div class="py-2">Kam</div>
+                        <div class="py-2">Jum</div>
+                        <div class="py-2 text-blue-600">Sab</div>
+                    </div>
+
+                    <div id="calendar-grid" class="grid grid-cols-7 gap-1.5 sm:gap-2">
+                        <!-- Dynamic Calendar Days JS -->
+                    </div>
+                </div>
+
+                <!-- Calendar Selected Day Output Area -->
+                <div id="calendar-day-details" class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hidden">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                        <h4 class="font-bold text-slate-800 text-base flex items-center gap-2">
+                            <i class="fa-solid fa-clock text-emerald-600"></i> Detail Agenda Tanggal: <span id="selected-date-str" class="text-emerald-700"></span>
+                        </h4>
+                        <button onclick="closeCalendarDetail()" class="text-slate-400 hover:text-slate-600 text-sm">
+                            <i class="fa-solid fa-xmark"></i> Tutup
+                        </button>
+                    </div>
+                    <div id="selected-date-events-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Events populated here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PAGE 4: FILTER KELAS ================= -->
+            <section id="page-filterKelas" class="tab-content hidden space-y-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm text-center">
+                    <h3 class="text-xl font-bold text-slate-800">Pilih Kelas Siswa</h3>
+                    <p class="text-sm text-slate-500 mt-1 max-w-xl mx-auto">Tampilkan hanya agenda yang relevan dan diikuti oleh kelas tertentu.</p>
+                    
+                    <div class="flex flex-wrap items-center justify-center gap-2.5 mt-6">
+                        <button onclick="setDedicatedClass('ALL')" class="dedicated-class-btn px-5 py-2.5 rounded-xl text-sm font-bold bg-emerald-600 text-white shadow-sm transition" data-class="ALL">
+                            Tampilkan Semua
+                        </button>
+                        <button onclick="setDedicatedClass('1')" class="dedicated-class-btn px-5 py-2.5 rounded-xl text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" data-class="1">
+                            Kelas 1
+                        </button>
+                        <button onclick="setDedicatedClass('2')" class="dedicated-class-btn px-5 py-2.5 rounded-xl text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" data-class="2">
+                            Kelas 2
+                        </button>
+                        <button onclick="setDedicatedClass('3')" class="dedicated-class-btn px-5 py-2.5 rounded-xl text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" data-class="3">
+                            Kelas 3
+                        </button>
+                        <button onclick="setDedicatedClass('4')" class="dedicated-class-btn px-5 py-2.5 rounded-xl text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" data-class="4">
+                            Kelas 4
+                        </button>
+                        <button onclick="setDedicatedClass('5')" class="dedicated-class-btn px-5 py-2.5 rounded-xl text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" data-class="5">
+                            Kelas 5
+                        </button>
+                        <button onclick="setDedicatedClass('6')" class="dedicated-class-btn px-5 py-2.5 rounded-xl text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" data-class="6">
+                            Kelas 6
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Class Agenda Cards List -->
+                <div id="dedicated-class-results" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Cards populated via JS -->
+                </div>
+            </section>
+
+            <!-- ================= PAGE 5: INFO PENTING ================= -->
+            <section id="page-infoPenting" class="tab-content hidden space-y-6">
+                
+                <!-- Notice Banner -->
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-2xl shadow-sm">
+                    <div class="flex items-start gap-3.5">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-600 text-2xl mt-0.5"></i>
+                        <div>
+                            <h3 class="text-base font-bold text-amber-900">⚠️ PERHATIAN PENTING</h3>
+                            <p class="text-sm text-amber-800 mt-1 font-medium leading-relaxed">
+                                Mohon memperhatikan ketentuan seragam, kelengkapan Atribut, serta jadwal kedatangan/pengambilan pada setiap agenda kegiatan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Information Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Card 1: Seragam & Ketentuan -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-shirt"></i>
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-base">Panduan Seragam & Atribut</h4>
+                        </div>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                                <span><strong>1 OKTOBER:</strong> Seragam Hari Kamis lengkap.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                                <span><strong>2 OKTOBER:</strong> Baju Batik Bebas (Bawahan tidak boleh bahan jeans).</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                                <span><strong>19 OKTOBER (Foto):</strong> Seragam hari Senin lengkap atribut + topi, rambut rapi (dasi khusus putra).</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                                <span><strong>28 OKTOBER:</strong> Memakai baju adat Nusantara.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2: Pengambilan Raport & Asesmen -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                            <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-file-pen"></i>
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-base">Raport & Asesmen Siswa</h4>
+                        </div>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-info text-blue-600 mt-1"></i>
+                                <span><strong>ASSIK (12–13 Okt):</strong> Khusus Kelas 6 mencakup mata pelajaran Matematika & Bahasa Indonesia.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-info text-blue-600 mt-1"></i>
+                                <span><strong>Raport ASTS 1 (16 Okt):</strong> Pengambilan Raport wajib oleh orang tua/wali murid masing-masing.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Official Note Box (NB) -->
+                <div class="bg-slate-900 text-white p-6 rounded-2xl shadow-md border border-slate-800">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-exclamation text-amber-400 text-xl mt-0.5"></i>
+                        <div>
+                            <span class="text-xs uppercase font-extrabold text-amber-400 tracking-wider">Catatan Resmi Tambahan</span>
+                            <p class="text-base font-medium mt-1 text-slate-200">
+                                NB: Kegiatan akan berubah jika ada perubahan informasi dari dinas dan yayasan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <!-- MODAL DETAIL KEGIATAN -->
+    <div id="event-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-slate-100 overflow-hidden modal-animate">
+            <div id="modal-header-bg" class="gradient-header text-white p-6 relative">
+                <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div id="modal-category-badge" class="inline-block px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold mb-2 backdrop-blur-sm">
+                    Category Badge
+                </div>
+                <h3 id="modal-title" class="text-2xl font-extrabold text-white leading-tight">Nama Agenda</h3>
+                <div id="modal-date" class="mt-2 text-emerald-100 text-sm font-semibold flex items-center gap-2">
+                    <i class="fa-regular fa-calendar"></i> Tanggal Agenda
+                </div>
+            </div>
+
+            <div class="p-6 space-y-4">
+                <!-- Class target -->
+                <div>
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Sasaran Kelas</label>
+                    <div id="modal-class" class="mt-1 flex flex-wrap gap-1.5">
+                        <!-- Class badges -->
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Keterangan / Ketentuan</label>
+                    <p id="modal-desc" class="mt-1 text-slate-700 text-sm leading-relaxed bg-slate-50 p-3.5 rounded-xl border border-slate-200/80 font-medium">
+                        Keterangan detail kegiatan.
+                    </p>
+                </div>
+
+                <div class="pt-2 flex justify-end">
+                    <button onclick="closeModal()" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-sm font-bold transition">
+                        Selesai
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="font-bold text-slate-700">Agenda Kegiatan Sekolah • Oktober 2026</p>
+            <p class="mt-1 text-slate-500">Informasi dapat berubah sesuai kebijakan dinas dan yayasan.</p>
+            <p class="mt-3 text-[11px] text-slate-400">NB: Kegiatan akan berubah jika ada perubahan informasi dari dinas dan yayasan.</p>
+        </div>
+    </footer>
+
+    <script>
+        /*
+         * MASTER DATA AGENDA KEGIATAN OKTOBER 2026
+         * PERSIS SESUAI PERSYARATAN USER
+         */
+        const agendaData = [
+            {
+                id: 1,
+                date: "1 Oktober 2026",
+                dayNumber: 1,
+                title: "Apel Upacara Hari Kesaktian Pancasila",
+                targetClass: "Kelas 1–6",
+                classes: [1, 2, 3, 4, 5, 6],
+                description: "Seragam Hari Kamis",
+                category: "Upacara",
+                icon: "fa-flag",
+                color: "emerald"
+            },
+            {
+                id: 2,
+                date: "1 Oktober 2026",
+                dayNumber: 1,
+                title: "Menyanyikan lagu “Wiwit Aku Isih Bayi”",
+                targetClass: "Kelas 1–6",
+                classes: [1, 2, 3, 4, 5, 6],
+                description: "Kegiatan bersama menyanyikan lagu daerah daerah Jawa",
+                category: "Kegiatan budaya/bahasa",
+                icon: "fa-music",
+                color: "blue"
+            },
+            {
+                id: 3,
+                date: "2 Oktober 2026",
+                dayNumber: 2,
+                title: "Memperingati Hari Batik Nasional",
+                targetClass: "Kelas 1–6",
+                classes: [1, 2, 3, 4, 5, 6],
+                description: "Memakai Baju Batik Bebas (Bawahan yang tidak boleh jeans)",
+                category: "Hari Nasional",
+                icon: "fa-shirt",
+                color: "purple"
+            },
+            {
+                id: 4,
+                date: "2 Oktober 2026",
+                dayNumber: 2,
+                title: "Batik Art Mosaic",
+                targetClass: "Kelas 1–3",
+                classes: [1, 2, 3],
+                description: "Lomba Perkelas",
+                category: "Lomba",
+                icon: "fa-palette",
+                color: "purple"
+            },
+            {
+                id: 5,
+                date: "2 Oktober 2026",
+                dayNumber: 2,
+                title: "Batik Style-Up Challenge",
+                targetClass: "Kelas 1–6",
+                classes: [1, 2, 3, 4, 5, 6],
+                description: "Unjuk kreativitas busana batik siswa",
+                category: "Lomba",
+                icon: "fa-crown",
+                color: "purple"
+            },
+            {
+                id: 6,
+                date: "12–13 Oktober 2026",
+                dayNumber: [12, 13],
+                title: "Assesmen Standar Siswa Kota Semarang (ASSIK)",
+                targetClass: "Kelas 6",
+                classes: [6],
+                description: "Matematika dan Bahasa Indonesia",
+                category: "Asesmen",
+                icon: "fa-file-signature",
+                color: "amber"
+            },
+            {
+                id: 7,
+                date: "16 Oktober 2026",
+                dayNumber: 16,
+                title: "Penerimaan Raport ASTS 1",
+                targetClass: "Kelas 1–6",
+                classes: [1, 2, 3, 4, 5, 6],
+                description: "Pengambilan oleh orang tua masing-masing",
+                category: "Raport",
+                icon: "fa-book-open-reader",
+                color: "blue"
+            },
+            {
+                id: 8,
+                date: "19 Oktober 2026",
+                dayNumber: 19,
+                title: "Foto Sekolah (Raport dan Ijazah)",
+                targetClass: "Kelas 1 dan 6",
+                classes: [1, 6],
+                description: "Seragam hari Senin lengkap dengan atribut dan topi; rambut rapi (dasi bagi laki-laki)",
+                category: "Dokumentasi sekolah",
+                icon: "fa-camera",
+                color: "sky"
+            },
+            {
+                id: 9,
+                date: "22 Oktober 2026",
+                dayNumber: 22,
+                title: "Hari Santri",
+                targetClass: "Kelas 1–6",
+                classes: [1, 2, 3, 4, 5, 6],
+                description: "Kunjungan ke Ponpes",
+                category: "Kegiatan keagamaan",
+                icon: "fa-mosque",
+                color: "emerald"
+            },
+            {
+                id: 10,
+                date: "28 Oktober 2026",
+                dayNumber: 28,
+                title: "Sumpah Pemuda",
+                targetClass: "Kelas 1–6",
+                classes: [1, 2, 3, 4, 5, 6],
+                description: "Memakai baju adat",
+                category: "Hari Nasional",
+                icon: "fa-people-roof",
+                color: "red"
+            },
+            {
+                id: 11,
+                date: "Oktober 2026",
+                dayNumber: "FULL",
+                title: "Semarak Bulan Bahasa",
+                targetClass: "Kelas 1–6",
+                classes: [1, 2, 3, 4, 5, 6],
+                description: "Word Adventure",
+                category: "Kegiatan budaya/bahasa",
+                icon: "fa-language",
+                color: "indigo"
+            }
+        ];
+
+        // State variables
+        let currentTab = 'beranda';
+        let currentClassFilter = 'ALL';
+        let currentCategoryFilter = 'ALL';
+        let searchQuery = '';
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderAgendaTable();
+            renderCalendarGrid();
+            renderDedicatedClassList();
+            checkTodayAgenda();
+        });
+
+        function switchTab(tabId) {
+            currentTab = tabId;
+            // Hide all pages
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            
+            // Show selected page
+            const targetPage = document.getElementById(`page-${tabId}`);
+            if (targetPage) targetPage.classList.remove('hidden');
+
+            // Update nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.className = "nav-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 whitespace-nowrap text-slate-600 hover:bg-slate-100 hover:text-slate-900";
+            });
+
+            const activeBtn = document.getElementById(`nav-${tabId}`);
+            if (activeBtn) {
+                activeBtn.className = "nav-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 whitespace-nowrap bg-emerald-600 text-white shadow-sm";
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function getCategoryBadgeStyle(category) {
+            switch(category) {
+                case 'Upacara': return 'bg-emerald-100 text-emerald-800 border-emerald-200';
+                case 'Hari Nasional': return 'bg-red-100 text-red-800 border-red-200';
+                case 'Lomba': return 'bg-purple-100 text-purple-800 border-purple-200';
+                case 'Asesmen': return 'bg-amber-100 text-amber-800 border-amber-200';
+                case 'Raport': return 'bg-blue-100 text-blue-800 border-blue-200';
+                case 'Dokumentasi sekolah': return 'bg-sky-100 text-sky-800 border-sky-200';
+                case 'Kegiatan keagamaan': return 'bg-teal-100 text-teal-800 border-teal-200';
+                case 'Kegiatan budaya/bahasa': return 'bg-indigo-100 text-indigo-800 border-indigo-200';
+                default: return 'bg-slate-100 text-slate-800 border-slate-200';
+            }
+        }
+
+        function filterAgendaItems() {
+            return agendaData.filter(item => {
+                // Class filter
+                const matchesClass = (currentClassFilter === 'ALL') || 
+                    (item.classes && item.classes.includes(parseInt(currentClassFilter)));
+                
+                // Category filter
+                const matchesCategory = (currentCategoryFilter === 'ALL') || (item.category === currentCategoryFilter);
+
+                // Search query
+                const q = searchQuery.toLowerCase().trim();
+                const matchesSearch = !q || 
+                    item.title.toLowerCase().includes(q) || 
+                    item.description.toLowerCase().includes(q) || 
+                    item.date.toLowerCase().includes(q) ||
+                    item.targetClass.toLowerCase().includes(q);
+
+                return matchesClass && matchesCategory && matchesSearch;
+            });
+        }
+
+        function renderAgendaTable() {
+            const items = filterAgendaItems();
+            const tbody = document.getElementById('agenda-table-body');
+            const noMsg = document.getElementById('no-agenda-msg');
+            const countBadge = document.getElementById('agenda-count-badge');
+
+            countBadge.innerText = `${items.length} Agenda`;
+
+            if (items.length === 0) {
+                tbody.innerHTML = '';
+                noMsg.classList.remove('hidden');
+                return;
+            }
+
+            noMsg.classList.add('hidden');
+
+            // Pengelompokan baris berdasarkan tanggal yang sama
+            let html = '';
+            let i = 0;
+            while (i < items.length) {
+                let currentDate = items[i].date;
+                let group = [];
+                while (i < items.length && items[i].date === currentDate) {
+                    group.push(items[i]);
+                    i++;
+                }
+
+                group.forEach((item, index) => {
+                    html += `
+                        <tr class="hover:bg-slate-50/80 transition-colors cursor-pointer group" onclick="showEventDetailById(${item.id})">
+                    `;
+                    // Jika baris pertama dalam kelompok tanggal yang sama, gunakan rowspan
+                    if (index === 0) {
+                        html += `
+                            <td rowspan="${group.length}" class="py-4 px-6 font-bold text-slate-800 whitespace-nowrap align-top border-r border-slate-100 bg-slate-50/40">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0"></span>
+                                    <span>${item.date}</span>
+                                </div>
+                            </td>
+                        `;
+                    }
+                    html += `
+                            <td class="py-4 px-6 font-semibold text-slate-800">
+                                <div class="flex items-center gap-2">
+                                    <span>${item.title}</span>
+                                </div>
+                                <span class="inline-block mt-1 px-2 py-0.5 text-[11px] font-bold rounded border ${getCategoryBadgeStyle(item.category)}">
+                                    ${item.category}
+                                </span>
+                            </td>
+                            <td class="py-4 px-6 whitespace-nowrap">
+                                <span class="px-2.5 py-1 bg-slate-100 text-slate-700 font-bold text-xs rounded-lg border border-slate-200">
+                                    ${item.targetClass}
+                                </span>
+                            </td>
+                            <td class="py-4 px-6 text-slate-600 max-w-xs leading-relaxed">
+                                ${item.description || '-'}
+                            </td>
+                            <td class="py-4 px-6 text-center whitespace-nowrap">
+                                <button class="px-3 py-1.5 bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white rounded-lg text-xs font-bold transition group-hover:bg-emerald-600 group-hover:text-white">
+                                    Detail <i class="fa-solid fa-angle-right text-[10px] ml-0.5"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            }
+
+            tbody.innerHTML = html;
+        }
+
+        function selectClassFilter(classNum) {
+            currentClassFilter = classNum;
+            document.querySelectorAll('.class-pill-btn').forEach(btn => {
+                if (btn.getAttribute('data-class') === classNum) {
+                    btn.className = "class-pill-btn px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-600 text-white transition shrink-0 shadow-sm";
+                } else {
+                    btn.className = "class-pill-btn px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition shrink-0";
+                }
+            });
+            renderAgendaTable();
+        }
+
+        function applyFilters() {
+            searchQuery = document.getElementById('search-input').value;
+            currentCategoryFilter = document.getElementById('category-filter').value;
+            renderAgendaTable();
+        }
+
+        function resetAllFilters() {
+            searchQuery = '';
+            currentCategoryFilter = 'ALL';
+            currentClassFilter = 'ALL';
+            document.getElementById('search-input').value = '';
+            document.getElementById('category-filter').value = 'ALL';
+            selectClassFilter('ALL');
+        }
+
+        function renderCalendarGrid() {
+            const calendarGrid = document.getElementById('calendar-grid');
+            // October 1, 2026 is Thursday. Offset = 4 empty cells (Sun=0, Mon=1, Tue=2, Wed=3)
+            const daysInMonth = 31;
+            const startDayOffset = 4; // Thursday
+
+            let html = '';
+
+            // Empty slots before Oct 1
+            for (let i = 0; i < startDayOffset; i++) {
+                html += `<div class="h-20 sm:h-24 bg-slate-50/50 rounded-xl border border-slate-100/60 p-1 opacity-40"></div>`;
+            }
+
+            // October days 1 to 31
+            for (let day = 1; day <= daysInMonth; day++) {
+                // Find items on this day
+                const matchingEvents = agendaData.filter(item => {
+                    if (Array.isArray(item.dayNumber)) {
+                        return item.dayNumber.includes(day);
+                    }
+                    return item.dayNumber === day;
+                });
+
+                const hasEvents = matchingEvents.length > 0;
+                
+                html += `
+                    <div onclick="selectCalendarDay(${day})" class="h-20 sm:h-24 bg-white rounded-xl border ${hasEvents ? 'border-emerald-300 shadow-sm hover:border-emerald-500 hover:shadow-md cursor-pointer' : 'border-slate-200/80'} p-1.5 flex flex-col justify-between transition group relative overflow-hidden">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs sm:text-sm font-extrabold ${hasEvents ? 'text-emerald-800' : 'text-slate-700'}">${day}</span>
+                            ${hasEvents ? `<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>` : ''}
+                        </div>
+                        <div class="space-y-1 overflow-hidden">
+                            ${matchingEvents.map(ev => `
+                                <div class="text-[10px] sm:text-xs truncate font-bold px-1.5 py-0.5 rounded ${ev.color === 'amber' ? 'bg-amber-100 text-amber-800' : 'bg-emerald-100 text-emerald-800'}">
+                                    ${ev.title}
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            calendarGrid.innerHTML = html;
+        }
+
+        function selectCalendarDay(dayNumber) {
+            const events = agendaData.filter(item => {
+                if (Array.isArray(item.dayNumber)) {
+                    return item.dayNumber.includes(dayNumber);
+                }
+                return item.dayNumber === dayNumber;
+            });
+
+            const dayDetailsArea = document.getElementById('calendar-day-details');
+            const dateStr = document.getElementById('selected-date-str');
+            const eventsList = document.getElementById('selected-date-events-list');
+
+            if (events.length === 0) {
+                dateStr.innerText = `${dayNumber} Oktober 2026`;
+                eventsList.innerHTML = `<p class="text-slate-500 text-sm font-medium col-span-2">Tidak ada agenda khusus pada tanggal ini.</p>`;
+            } else {
+                dateStr.innerText = `${dayNumber} Oktober 2026`;
+                eventsList.innerHTML = events.map(ev => `
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded border ${getCategoryBadgeStyle(ev.category)}">${ev.category}</span>
+                            <span class="text-xs font-bold text-slate-500">${ev.targetClass}</span>
+                        </div>
+                        <h5 class="font-bold text-slate-800 text-base">${ev.title}</h5>
+                        <p class="text-xs text-slate-600">${ev.description}</p>
+                        <button onclick="showEventDetailById(${ev.id})" class="text-xs font-bold text-emerald-600 hover:underline pt-1 inline-block">
+                            Lihat Detail Lengkap <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                `).join('');
+            }
+
+            dayDetailsArea.classList.remove('hidden');
+            dayDetailsArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function closeCalendarDetail() {
+            document.getElementById('calendar-day-details').classList.add('hidden');
+        }
+
+        function setDedicatedClass(classVal) {
+            currentClassFilter = classVal;
+            document.querySelectorAll('.dedicated-class-btn').forEach(btn => {
+                if (btn.getAttribute('data-class') === classVal) {
+                    btn.className = "dedicated-class-btn px-5 py-2.5 rounded-xl text-sm font-bold bg-emerald-600 text-white shadow-sm transition";
+                } else {
+                    btn.className = "dedicated-class-btn px-5 py-2.5 rounded-xl text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
+                }
+            });
+            renderDedicatedClassList();
+        }
+
+        function renderDedicatedClassList() {
+            const container = document.getElementById('dedicated-class-results');
+            const filtered = filterAgendaItems();
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full bg-white p-8 rounded-2xl text-center border border-slate-200 text-slate-500">
+                        <i class="fa-regular fa-calendar-xmark text-3xl mb-2 text-slate-300"></i>
+                        <p class="font-bold">Tidak ada agenda khusus untuk kelas ini.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filtered.map(item => `
+                <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition space-y-3 flex flex-col justify-between" onclick="showEventDetailById(${item.id})">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-extrabold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200">
+                                <i class="fa-regular fa-calendar mr-1"></i> ${item.date}
+                            </span>
+                            <span class="text-xs font-bold px-2 py-0.5 rounded border ${getCategoryBadgeStyle(item.category)}">${item.category}</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-base leading-snug">${item.title}</h4>
+                        <p class="text-xs text-slate-600 mt-2 line-clamp-2">${item.description}</p>
+                    </div>
+                    <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-500"><i class="fa-solid fa-users text-slate-400 mr-1"></i> ${item.targetClass}</span>
+                        <button class="text-xs font-bold text-emerald-600 hover:text-emerald-800">
+                            Detail <i class="fa-solid fa-angle-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function showEventDetailById(id) {
+            const item = agendaData.find(x => x.id === id);
+            if (!item) return;
+
+            document.getElementById('modal-title').innerText = item.title;
+            document.getElementById('modal-date').innerHTML = `<i class="fa-regular fa-calendar"></i> ${item.date}`;
+            document.getElementById('modal-desc').innerText = item.description;
+            
+            const catBadge = document.getElementById('modal-category-badge');
+            catBadge.innerText = item.category;
+
+            const classContainer = document.getElementById('modal-class');
+            classContainer.innerHTML = `<span class="px-3 py-1 bg-emerald-100 text-emerald-800 font-bold text-xs rounded-lg">${item.targetClass}</span>`;
+
+            document.getElementById('event-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('event-modal').classList.add('hidden');
+        }
+
+        // Close modal when clicking backdrop
+        document.getElementById('event-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'event-modal') closeModal();
+        });
+
+        function checkTodayAgenda() {
+            const today = new Date();
+            // Check if today is in October 2026
+            if (today.getFullYear() === 2026 && today.getMonth() === 9) {
+                const dateNum = today.getDate();
+                const matching = agendaData.filter(item => {
+                    if (Array.isArray(item.dayNumber)) return item.dayNumber.includes(dateNum);
+                    return item.dayNumber === dateNum;
+                });
+
+                if (matching.length > 0) {
+                    const banner = document.getElementById('today-banner');
+                    const text = document.getElementById('today-banner-text');
+                    text.innerText = `Hari Ini (${dateNum} Okt): ${matching.map(m => m.title).join(', ')}`;
+                    banner.classList.remove('hidden');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
